@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
 
-# ================== BANNERS E MENUS ==================
+#banner
 
 def banner():
     os.system('clear')
@@ -46,7 +46,7 @@ def toma_jack():
     print(f"\n\033[1;35m{random.choice(mensagens)}\033[0m\n")
     time.sleep(1)
 
-# ================== TESTES DE SEGURANÇA ==================
+#testes de seguranca
 
 def clickjacking_test(url):
     linha()
@@ -89,7 +89,7 @@ def headers_info(url):
     linha()
     print(f"\033[1;34m[•] Verificando headers de segurança em:\033[0m {url}")
     try:
-        # Ignora warnings de SSL inválido para ambientes de teste
+        #ignora aviso de ssl invaido pra ambiente de testes
         requests.packages.urllib3.disable_warnings()
         response = requests.get(url, timeout=10, verify=False)
         headers = response.headers
@@ -122,7 +122,7 @@ def xss_test(url):
     linha()
     toma_jack()
 
-# ================== LOOP PRINCIPAL ==================
+#loop principal do script
 
 def main():
     banner()
